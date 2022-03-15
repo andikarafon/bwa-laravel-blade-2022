@@ -13,6 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //sebelum php artisan migrate, maka daftarkan dulu semua seeder yang telah dibuat
+        $this->call([
+            StadiumsTableSeeder::class,
+            ClubsTableSeeder::class,
+            ManagersTableSeeder::class,
+            PlayersTableSeeder::class,
+            MatchesTableSeeder::class,
+        ]);
+
     }
 }
