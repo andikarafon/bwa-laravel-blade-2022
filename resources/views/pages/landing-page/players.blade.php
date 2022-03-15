@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-{{ set title }}
+
 @section('title', 'Players')
 
 @section('content')

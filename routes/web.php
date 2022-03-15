@@ -1,5 +1,7 @@
 <?php
 
+//Di Laravel maka jika ingin menggunakan sebuah Controller di Route maka harus didaftarkan terlebih dahulu
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//index pertama sekali
+
+//route ini menggunakan get karena memanggil public function di LandingController
+Route::get('clubs', [LandingController::class, 'clubs'])->name('landing.clubs');
+Route::get('players', [LandingController::class, 'players'])->name('landing.players');
+Route::get('managers', [LandingController::class, 'managers'])->name('landing.managers');
+Route::get('stadiums', [LandingController::class, 'stadiums'])->name('landing.stadiums');
+Route::resource('/', LandingController::class);
