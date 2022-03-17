@@ -6,8 +6,8 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Managers;
-use App\Illuminate\Database\Seeder;
-use App\Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ManagersTableSeeder extends Seeder
 {
@@ -18,8 +18,7 @@ class ManagersTableSeeder extends Seeder
      */
     public function run()
     {
-        //truncate DB
-        DB::table('managers')->truncate();
+  
 
         $managers = [
             [ 

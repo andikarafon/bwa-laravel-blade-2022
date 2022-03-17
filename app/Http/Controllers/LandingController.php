@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Clubs;
+use App\Models\Managers;
+use App\Models\Matches;
+use App\Models\Players;
+use App\Models\Stadiums;
+
+
 class LandingController extends Controller
 {
     /**
@@ -84,20 +91,29 @@ class LandingController extends Controller
 
 
     //custom
-    public function clubs() {
-        return view('pages.landing-page.clubs');
+    public function clubs() 
+    {
+
+        $clubs = Clubs::orderBy('throphy', 'desc')->get(); //memanggil semua data clubs
+        return view('pages.landing-page.clubs', ['clubs' => $clubs]);
     }
 
-    public function players() {
-        return view('pages.landing-page.players');
+    public function players() 
+    {
+        $players = Players::all();
+        return view('pages.landing-page.players', ['players' => $players]);
     }
 
-    public function managers() {
-        return view('pages.landing-page.managers');
+    public function managers() 
+    {
+        $managers = Managers::all();
+        return view('pages.landing-page.managers', ['managers' => $managers]);
     }
 
-    public function stadiums() {
-        return view('pages.landing-page.stadiums');
+    public function stadiums() 
+    {
+        $stadiums = Stadiums::all();
+        return view('pages.landing-page.stadiums', ['stadiums' => $stadiums]);
     }
 
 }

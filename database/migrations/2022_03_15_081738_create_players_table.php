@@ -15,7 +15,7 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->integer('clubs_id'); //jika tidak ada nullable, maka tidak boleh kosong
+            $table->foreignId('clubs_id')->nullable()->index('clubs_id_fk2_idx'); //jika tidak ada nullable, maka tidak boleh kosong
             $table->longtext('photo');
             $table->string('name');
             $table->string('height');

@@ -17,12 +17,11 @@ class ClubsTableSeeder extends Seeder
      */
     public function run()
     {
-        //truncate DB, agar tabel incrementnya kembali menjadi dari awal kembali
-        DB::table('clubs')->truncate();
+
 
         $clubs = [ 
                             [
-                                'stadiums'      =>   '1',
+                                'stadiums_id'      =>   '1',
                                 'name'          => 'Chelsea FC',
                                 'logo'          => 'https://resources.premierleague.com/premierleague/badges/t8.svg',
                                 'url'           => 'www.chelsea.com',

@@ -15,7 +15,7 @@ class CreateClubsTable extends Migration
     {
         Schema::create('clubs', function (Blueprint $table) {
             $table->id();
-            $table->integert('stadiums_id');
+            $table->foreignId('stadiums_id')->nullable()->index('stadiums_id_fk1_idx');
             $table->string('name');
             $table->longtext('logo')->nullable();
             $table->longtext('url')->nullable();

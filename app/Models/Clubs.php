@@ -21,6 +21,7 @@ class Clubs extends Model
         'updated_at',
   ];
 
+  
   //relation
   public function stadiums()
   {
